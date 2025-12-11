@@ -65,3 +65,28 @@ def test_rate_limit_enforced(monkeypatch):
     base_time[0] += 3601
     token = service.generate_token("user-123")
     assert service.validate_token(token) == "user-123"
+
+
+def test_rate_limit_remaining(monkeypatch):
+    service = PasswordResetService(secret_key="secret", rate_limit_per_hour=3)
+
+    base_time = [1_000_000]
+
+    def fake_time():
+        return base_time[0]
+
+    monkeypatch.setattr("sud.password_reset.time.time", fake_time)
+
+    assert service.rate_limit_remaining("user-123") == 3
+    service.generate_token("user-123")
+    assert service.rate_limit_remaining("user-123") == 2
+    base_time[0] += 4000
+    assert service.rate_limit_remaining("user-123") == 3
+
+
+def test_single_use_token_rejected_on_reuse():
+    service = PasswordResetService(secret_key="secret")
+    token = service.generate_token("user-abc")
+
+    assert service.validate_token_once(token) == "user-abc"
+    assert service.validate_token_once(token) is None
