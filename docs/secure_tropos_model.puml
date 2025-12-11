@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam monochrome true
+skinparam actorStyle awesome
+
+actor User
+actor "Security Officer" as Sec
+actor "Email Service" as Mail
+
+rectangle "Secure Password Reset" {
+  usecase "Request reset" as UC1
+  usecase "Generate signed token" as UC2
+  usecase "Deliver token" as UC3
+  usecase "Validate token" as UC4
+  usecase "Enforce rate limits" as UC5
+  usecase "Audit reset events" as UC6
+}
+
+User --> UC1
+User --> UC4
+Sec --> UC6
+Mail --> UC3
+
+UC1 --> UC2 : delegates
+UC2 --> UC3 : depends on delivery
+UC2 --> UC5 : triggers
+UC4 --> UC5 : checks quota
+UC4 --> UC6 : logs
+
+rectangle "Security goals" {
+  component "G1: Confidential token" as G1
+  component "G2: Integrity & replay protection" as G2
+  component "G3: Availability with throttling" as G3
+  component "G4: Accountability" as G4
+}
+
+G1 -down-> UC2 : achieves
+G2 -down-> UC4 : enforces
+G3 -down-> UC5 : satisfies
+G4 -down-> UC6 : supports
+@enduml

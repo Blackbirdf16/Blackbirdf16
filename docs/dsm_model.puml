@@ -1,0 +1,38 @@
+@startuml
+skinparam shadowing false
+skinparam monochrome true
+
+package "Password Reset Domain" {
+  class UserAccount {
+    +id: str
+    +email: str
+    +status: str
+  }
+
+  class ResetToken {
+    +userId: str
+    +issuedAt: Instant
+    +nonce: str
+    +signature: bytes
+    +isExpired(maxAgeSeconds): bool
+  }
+
+  class ResetPolicy {
+    +ttlSeconds: int
+    +rateLimitPerHour: int
+    +auditEnabled: bool
+  }
+
+  class AuditEvent {
+    +userId: str
+    +timestamp: Instant
+    +action: str
+    +metadata: Map
+  }
+}
+
+UserAccount "1" -- "*" ResetToken : owns >
+ResetToken --> ResetPolicy : validates with
+ResetToken --> AuditEvent : emits
+ResetPolicy --> AuditEvent : governs
+@enduml

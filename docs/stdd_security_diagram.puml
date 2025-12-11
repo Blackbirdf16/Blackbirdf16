@@ -1,0 +1,31 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam linetype ortho
+skinparam arrowColor #1d3557
+skinparam rectangleFontColor #1d3557
+skinparam rectangleBorderColor #1d3557
+skinparam rectangleBackgroundColor #f1faee
+skinparam noteBackgroundColor #fdf6e3
+skinparam noteBorderColor #b07f00
+
+start
+:Specify security stories\nThreat model & classification; 
+Use VP+PlantUML exports;[green]
+
+:Test design\nAbuse-case tests\nFail-first security checks;[gold]
+
+:Design solution\nSelect patterns (e.g., signed token)\nTraceability to DSM/Secure Tropos;[lightblue]
+
+:Develop code\nSecure coding checklist\nLinters & secret scanning;[lightpink]
+
+:Verify\nPytest + security tests\nDependency/dynamic scans;[palegreen]
+
+:Deploy\nSigned artifacts + IaC policy checks;[beige]
+
+:Monitor & learn\nSecurity observability, rate-limit alerts\nFeed incidents back to Specify;[wheat]
+
+:Close loop\nRefine models in VP + PlantUML;[lightgray]
+
+stop
+@enduml
