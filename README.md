@@ -44,6 +44,8 @@ Small steps. Consistent progress.
 **If you found me — welcome.  
 Stay curious.**
 
+P.S. :  Low tolerance for sideways communication when already mentally overloaded. 
+
 <!--
 **Blackbirdf16/Blackbirdf16** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
