@@ -2,25 +2,45 @@
 
 <h1 align="center">L.</h1>
 
-<p align="center">
-    <sub>• Security • Reverse Engineering</sub><br>
-</p>
-
+**Cybersecurity Engineer**
 
 I like systems that challenge me.  
 I break things so I can understand them.  
 Then I build better.
 
----
 
-### Focus Areas
-- Python scripting & automation
-- Malware analysis 
-- Cryptography experiments
-- Git, version control, workflow discipline
-- Debugging / problem-solving thinking
 
----
+## Core Areas
+
+- Secure Architecture
+- Threat Analysis
+- Reverse Engineering
+- Malware Analysis
+- Cryptography
+- Defensive Engineering
+- Secure Development
+- Auditability
+- Automation
+
+## Technical Stack
+
+- Python
+- FastAPI
+- Docker
+- PostgreSQL
+- Git
+- GitLab CI/CD
+- Linux
+- Security Testing
+
+## Focus
+
+- Security-by-Design
+- Access Control
+- Trust Boundaries
+- Tamper-Evident Logging
+- Vulnerability Analysis
+- Operational Security
 
 **If you found me — welcome.  
 Stay curious.**
