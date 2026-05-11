@@ -3,8 +3,7 @@
 <h1 align="center">L.</h1>
 
 <p align="center">
-    <sub>Python • Security • Reverse Engineering</sub><br>
-    <sub>Silent progress. No shortcuts.</sub>
+    <sub>• Security • Reverse Engineering</sub><br>
 </p>
 
 
@@ -16,28 +15,10 @@ Then I build better.
 
 ### Focus Areas
 - Python scripting & automation
-- Malware analysis fundamentals
+- Malware analysis 
 - Cryptography experiments
 - Git, version control, workflow discipline
 - Debugging / problem-solving thinking
-
----
-
-### Current Work
-📌 `brain-training` — fundamentals & logic  
-📌 `cryptography-` — ciphers & encoding practice  
-
-Small steps. Consistent progress.
-
----
-
-### 🌑 Mindset
-
-> I don’t rush.  
-> Real power is built quietly.
-
----
-
 
 ---
 
